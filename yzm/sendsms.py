@@ -6,7 +6,7 @@ def sendsms(keys, url, payload, headers):
     try:
         
         if keys in resource_1.Get:
-            response = requests.get(url, params=payload, headers=headers)
+            response = requests.get(url, json=payload, headers=headers)
         else:
             response = requests.post(url, json=payload, headers=headers)
 
@@ -30,4 +30,5 @@ if __name__ == "__main__":
     while True:
         for key, items in dicts.items():
             sendsms(key, items[0], items[1], items[2])
+
             time.sleep(3)
