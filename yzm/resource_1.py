@@ -1,5 +1,5 @@
 
-Get=['sxk','hc','rsk','cemo']
+Get=['sxk','hc','rsk','cemo','s399']
 def preparingnumber(number):
     game_url = 'https://m.bigplayers.com/api/user/v1/smsCode/sendLoginSmsV2'
     game_payload = {
@@ -287,6 +287,33 @@ def preparingnumber(number):
     }
     Cemo=[cemo_url, cemo_payload, cemo_headers]
 
+    
+    s399_url=f'https://ptlogin.4399.com/ptlogin/sendPhoneLoginCode.do?phone={number}&appId=www_home&v=1&sig=&t=1755144025802&v=1'
+    s399_payload =  {
+        "phone": number,
+        "appId": "www_home",
+        "v": "1",
+        "sig": "",
+        "t": "1755144025802",
+    }
+    s399_headers ={
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+        "connection": "keep-alive",
+        "cookie": "UM_distinctid=19828547a6a698-034044c416feb88-4c657b58-100200-19828547a6b40b; _gprp_c=\"\"; _4399stats_vid=17530851152592651; Hm_lvt_f1fb60d2559a83c8fa1ee6125a352bd7=1753085115; _4399tongji_vid=17530851226865; home4399=yes; Hm_lvt_334aca66d28b3b338a76075366b2b9e8=1753023282,1755144012; Hm_lpvt_334aca66d28b3b338a76075366b2b9e8=1755144012; HMACCOUNT=FF4E43BDD4FFE36E; USESSIONID=1db836d8-1629-4c84-9dc6-068bbf81af03; phlogact=l214415p14418",
+        "host": "ptlogin.4399.com",
+        "referer": "https://ptlogin.4399.com/ptlogin/phoneLoginFrame.do?loginMode=login_phone&crossDomainIFrame=&postLoginHandler=default&redirectUrl=&displayMode=popup&css=&appId=www_home&gameId=&username=&externalLogin=qq&password=&mainDivId=popup_phonelogin_div&autoLogin=true&includeFcmInfo=false&qrLogin=true&userNameLabel=4399%E7%94%A8%E6%88%B7%E5%90%8D&userNameTip=%E8%AF%B7%E8%BE%93%E5%85%A54399%E7%94%A8%E6%88%B7%E5%90%8D&welcomeTip=%E6%AC%A2%E8%BF%8E%E5%9B%9E%E5%88%B04399&regLevel=4&loginLevel=0&bizId=&v=1755144018529&v=1755144018529&iframeId=popup_phone_login_frame",
+        "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Microsoft Edge\";v=\"139\", \"Chromium\";v=\"139\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0"
+    }
+    S399=[s399_url, s399_payload, s399_headers]
+
     conclusion={'game': Game,'hxx': Hxx,'kuaishou': Ks,'sdc': Sdc,'sjzg': Sjzg,'sxk': Sxk,
-                'zmn': Zmn,'hc': Hc,'rsk': Rsk,'xz': Xz,'cemo': Cemo}
+                'zmn': Zmn,'hc': Hc,'rsk': Rsk,'xz': Xz,'cemo': Cemo,'s399': S399}
     return conclusion
